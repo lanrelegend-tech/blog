@@ -1,0 +1,1 @@
+[{"stmt":"SELECT * FROM users;","header":["id","username","email","password","role"],"rows":[["1","Legend","legend@gmail.com","$2b$12$ScH0aaGTCaCoKQJraF27l./8q50rM0EPr2vvuE.tIGV.KC5Dl/GrG","user"]]}]

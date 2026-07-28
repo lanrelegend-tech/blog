@@ -76,7 +76,12 @@ def delete_post(post_id):
 
     current_user_id = int(get_jwt_identity())
 
-    if post.user_id != current_user_id:
+    current_user = db.session.get(User, current_user_id)
+
+    if not current_user:
+        return {"error": "User not found"}, 404
+
+    if post.user_id != current_user.id and current_user.role != "admin":
         return {"error": "You are not allowed to delete this post"}, 403
 
     db.session.delete(post)
